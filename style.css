@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  /* 
+    These rules apply to actual HTML elements with no labelling!
+    So: they style the tags directly
+  */
+  
+  html {
+    background-color: #f9f6f0;
+    font-size: 16px;
+    min-width: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  
+    /* these are specific to different browsers */
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  
+    font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #f9f6f0;
+  }
+  
+  
+  a {
+    display: inline-block;
+    text-decoration: none;
+  }
+  
+  h2, h3 {
+    margin:0;
+    padding:0;
+    padding-bottom:1.5rem;
+  }
+  
+  form {
+    accent-color: hsla(120, 100%, 50%, 0.482);
+  }
+  
+  /*
+    - These styles use 'class names'
+    - You can apply them by using the 'class' attribute on your HTML
+    - like this: <div class="wrapper">
+    - note that the period vanishes there!
+  */
+  
+  .wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    flex: 1;
+  }
+  
+  .container {
+    margin: 0 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    flex:1;
+  }
+  
+  .header {
+    padding-top: 0rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    padding-bottom: 0rem;
+  }
+  
+  .header h1 {
+    display: block;
+  
+    /* colors */
+    background-color: #f9f6f0;
+    color: #000000;
+  
+    /* shapes */
+    border: 2px solid;
+    border-radius: 6px;
+    font-size: 1.5rem;
+    padding: 1.25rem;
+    margin:0;
+  }
