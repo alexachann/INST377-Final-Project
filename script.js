@@ -63,23 +63,46 @@ function getRandomIntInclusive(min, max) {
     const loadDataButton = document.querySelector("#data_load");
     const clearDataButton = document.querySelector("#data_clear");
     const generateListButton = document.querySelector("#generate");
+    const refreshDataButton = document.querySelector("#data_refresh");
     const textField = document.querySelector("#resto");
   
     const loadAnimation = document.querySelector("#data_load_animation");
     loadAnimation.style.display = "none";
+    refreshDataButton.classList.add("hidden");
     generateListButton.classList.add("hidden");
 
     const carto = initMap();
+    
+    let currentList = [];
+
+    console.log("loading data");
+    loadAnimation.style.display = "inline-block";
   
-    const storedData = localStorage.getItem('storedData');
-    let parsedData = JSON.parse(storedData);
+    const results = await fetch(
+      "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2020-01-01&endtime=2020-01-02"
+    );
+
+    const storedList = await results.json();
+    const dataList = storedList.features;
+
+    console.log(storedList)
+    console.log(dataList)
+
+    localStorage.setItem('storedData', JSON.stringify(dataList));
+    let storedData = localStorage.getItem("storedData");
+
+    console.log(storedData)
+
+    let parsedData = JSON.parse(storedData);   
+    console.log(parsedData)
+
     if (parsedData?.length > 0) {
       generateListButton.classList.remove("hidden");
     }
-
-    let currentList = [];
   
-    loadDataButton.addEventListener("click", async (submitEvent) => {
+    loadAnimation.style.display = "none";
+  
+    /*loadDataButton.addEventListener("click", async (submitEvent) => {
       console.log("loading data");
       loadAnimation.style.display = "inline-block";
   
@@ -88,6 +111,7 @@ function getRandomIntInclusive(min, max) {
       );
     
       const storedList = await results.json();
+      const dataList = storedList.Results;
       console.log(storedList)
       localStorage.setItem('storedData', JSON.stringify(storedList));
       parsedData = storedList.features;
@@ -101,6 +125,26 @@ function getRandomIntInclusive(min, max) {
       }
   
       loadAnimation.style.display = "none";
+    });*/
+
+    refreshDataButton.addEventListener("click", (event) => {
+      loadAnimation.style.display = "inline-block";
+      localStorage.clear();
+      console.log(localStorage)
+
+      const target = document.querySelector("#location");
+      target.innerHTML = "";
+    
+      localStorage.setItem('storedData', JSON.stringify(dataList));
+      storedData = localStorage.getItem("storedData");
+    
+      parsedData = JSON.parse(storedData);
+  
+      loadAnimation.style.display = "none";
+
+      currentList = cutEarthquakeList(parsedData);
+      injectHTML(currentList)
+      markerPlace(currentList, carto);
     });
   
     generateListButton.addEventListener("click", (event) => {
@@ -109,6 +153,11 @@ function getRandomIntInclusive(min, max) {
       console.log(currentList);
       injectHTML(currentList);
       markerPlace(currentList, carto);
+
+      if (currentList?.length > 0) {
+        generateListButton.classList.add("hidden");
+        refreshDataButton.classList.remove("hidden");
+      }
     });
 
     textField.addEventListener("input", (event) => {
@@ -119,11 +168,11 @@ function getRandomIntInclusive(min, max) {
         markerPlace(newList, carto);
     });
 
-    clearDataButton.addEventListener("click", (event) => {
+    /*clearDataButton.addEventListener("click", (event) => {
         console.log('clear browser data');
         localStorage.clear();
         console.log('localStorage Check', localStorage.getItem("storedData"));
-    })
+    })*/
   }
   
   document.addEventListener("DOMContentLoaded", async () => mainEvent());

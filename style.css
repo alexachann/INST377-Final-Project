@@ -80,10 +80,11 @@
   
     /* colors */
     color: #000000;
+
+    /* text */
+    text-align: center;
   
     /* shapes */
-    border: 2px dashed;
-    border-radius: 6px;
     font-size: 1.5rem;
     padding: 1.25rem;
     margin:0; /* removing the margin on h1 tags means the header pins to the top if we move */
@@ -110,7 +111,7 @@
   
   .box {
     background-color: rgba(239, 239, 239, 0.40);
-    border: 2px dashed;
+    border: 2px solid;
     border-radius: 4px;
   
     width: fit-content;
@@ -121,7 +122,7 @@
 
   .box-text {
     background-color: rgba(239, 239, 239, 0.40);
-    border: 2px dashed;
+    border: 2px solid;
     border-radius: 4px;
   
     width: fit-content;
@@ -143,6 +144,28 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
+  }
+
+  .footer {
+    flex-shrink: 0;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    background-color: #ffffff;
+  }
+  
+  .footer a {
+    color: #000000;
+    text-decoration: underline;
+  }
+  
+  .footer a:hover {
+    /* Hue, saturation, luminosity, alpha */
+    background-color: rgba(230, 230, 230, 0.15);
+    /* red, green, blue, alpha */
+    color: rgb(254, 169, 163);
+    text-decoration: none;
   }
   
   /* .carousel_item, */

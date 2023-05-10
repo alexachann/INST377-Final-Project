@@ -21,19 +21,20 @@
         </header>
         <div class="container">
             <div class="left_section box">
-                <h3>Form Inputs</h3>
+                <h3>Filter Input</h3>
                 <form 
                     action="https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2020-01-01&endtime=2020-01-02" 
                     class="box main_form"
                 >
-                    <button type="button" id="data_load">Load Data</button>
-                    <button type="button" id="data_clear">Clear Data</button>
+                    <!-- <button type="button" id="data_load">Load Data</button> -->
+                    <!-- <button type="button" id="data_clear">Clear Data</button> -->
                     <div>
                       <label for="resto">Filter By Earthquake Location</label>
                       <input type="text" id="resto" name="resto" />
                   </div>
                     <div class="buttons">
                         <button type="button" id="generate">Generate List</button>
+                        <button type="button" id="data_refresh">Refresh</button>
                     </div>
                 </form>
             </div>
@@ -47,6 +48,12 @@
             </div>
         </div>
     </div>
-    <script src="./script.js"></script>
+    <footer class="footer">
+        <div>
+            Alexa Chan
+        </div>
+        <a href="https://github.com/alexachann/INST377-Final-Project" target="_blank" rel="noopener noreferrer">Github Repository</a>
+    </footer>
+    <script src="./script.js">location.reload();</script>
   </body>
 </html>
