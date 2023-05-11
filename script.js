@@ -10,9 +10,8 @@ function getRandomIntInclusive(min, max) {
     target.innerHTML = "";
     list.forEach((item, index) => {
       const str = `<li>${item.properties.title}</li>`;
-      const int = item.properties.mag;
       console.log(str)
-      target.innerHTML += str.concat(int," mag")
+      target.innerHTML += str
     });
   }
 

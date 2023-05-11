@@ -10,15 +10,20 @@
     crossorigin=""/>
     
     <link rel="stylesheet" href="style.css"/>
-
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
   </head>
   <body>
     <div class="wrapper">
         <header class="header">
-            <h1>Investigation of Earthquakes</h1>
-            <a href=""></a>
+            <h1>
+                <div class="container">
+                    <img src="images/world.png" alt="World Icon">
+                </div>
+                Investigation of Earthquakes
+                <br>
+                <a href="https://alexachann.github.io/INST377-Final-Project/about.html">About</a>
+            </h1>
         </header>
         <div class="container">
             <div class="left_section box">
@@ -27,12 +32,10 @@
                     action="https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2020-01-01&endtime=2020-01-02" 
                     class="box main_form"
                 >
-                    <!-- <button type="button" id="data_load">Load Data</button> -->
-                    <!-- <button type="button" id="data_clear">Clear Data</button> -->
                     <div>
                       <label for="resto">Filter By Earthquake Location</label>
                       <input type="text" id="resto" name="resto" />
-                  </div>
+                    </div>
                     <div class="buttons">
                         <button type="button" id="generate">Generate List</button>
                         <button type="button" id="data_refresh">Refresh</button>
