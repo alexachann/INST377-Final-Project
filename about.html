@@ -1,0 +1,52 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investigation of Earthquakes</title>
+
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <div class="wrapper">
+        <header class="header">
+            <h1>
+                <div>
+                    About Page
+                </div>
+                <div>
+                    <a href="https://alexachann.github.io/INST377-Final-Project/">Home</a>
+                </div>
+            </h1>
+        </header>
+        <div class="set-box">
+            <h3>Overview</h3>
+            This website displays data about earthquakes around the world. The API the 
+            visualization is fetching from contains relevant information like distance 
+            and direction from nearest city, magnitude, and coordinates of 611 
+            earthquakes. The problem I'm trying to solve is lack of awareness of the 
+            presence of earthquakes in certain locations. Using the information present 
+            in the API, the map will be able to identify the location of the most amount 
+            of earthquakes from a set of 15 at a time. You will also be able to see, on 
+            average, which locations have the highest magnitude earthquakes and therefore, 
+            the most effect on the surrounding area.
+        </div>
+        <div class="set-box">
+            <h3>How To Use Visualization</h3>
+            The map shows the location of 15 earthquakes at a time based off a 
+            its coordinate location. First, you want generate an initial list of
+            earthquakes by clicking the generate button. Then, you can filter 
+            through the generated list of earthquakes by typing in the magnitude
+            or location of earthquakes. To generate a new list of earthquakes after
+            the original list is generated, use the refresh button that appears.
+        </div>
+    </div>
+    <footer class="footer">
+        <div>
+            Alexa Chan
+        </div>
+        <a href="https://github.com/alexachann/INST377-Final-Project" target="_blank" rel="noopener noreferrer">Github Repository</a>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>

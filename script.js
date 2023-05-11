@@ -9,15 +9,16 @@ function getRandomIntInclusive(min, max) {
     const target = document.querySelector("#location");
     target.innerHTML = "";
     list.forEach((item, index) => {
-      const str = `<li>${item.properties.place}</li>`;
+      const str = `<li>${item.properties.title}</li>`;
+      const int = item.properties.mag;
       console.log(str)
-      target.innerHTML += str;
+      target.innerHTML += str.concat(int," mag")
     });
   }
 
   function filterList(list, query) {
     return list.filter((item) => {
-      const lowerCaseName = item.properties.place.toLowerCase();
+      const lowerCaseName = item.properties.title.toLowerCase();
       const lowerCaseQuery = query.toLowerCase();
       return lowerCaseName.includes(lowerCaseQuery);
     });
