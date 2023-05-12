@@ -9,7 +9,6 @@
     overflow-x: hidden;
     overflow-y: scroll;
   
-    /* these are specific to different browsers */
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -28,9 +27,8 @@
     background-color: #f9f6f0;
   }
   
-  
   a {
-    display: inline-block;
+    text-align: center;
     text-decoration: none;
   }
   
@@ -41,7 +39,7 @@
   }
   
   form {
-    accent-color: hsla(120, 100%, 50%, 0.482);
+    accent-color: #000000;
   }
   
   .wrapper {
@@ -79,17 +77,12 @@
   }
   
   .header a:hover {
-    /* Hue, saturation, luminosity, alpha */
     background-color: rgba(230, 230, 230, 0.15);
-    /* red, green, blue, alpha */
     color: rgb(254, 169, 163);
     text-decoration: none;
   }
   
   .header h1 {
-    display: block;
-    /* this will push other blocks out of the way */
-  
     /* colors */
     color: #000000;
     background-color: #5da2db;
@@ -100,10 +93,9 @@
     /* shapes */
     font-size: 1.5rem;
     padding: 1.25rem;
-    margin: 0; /* removing the margin on h1 tags means the header pins to the top if we move */
+    margin: 0;
   
-  
-    /* box-shadows are fancy */
+    /* box-shadows*/
     box-shadow: 0 0.5em 1em -0.125em #0a0a0a1a, 0 0 0 1px #0a0a0a05;
   }
   
@@ -131,6 +123,7 @@
     
     width: fit-content;
     height:fit-content;
+    align-items: center;
     padding: 2rem;
     margin: 2rem;
   }
@@ -178,24 +171,20 @@
   }
   
   .footer a:hover {
-    /* Hue, saturation, luminosity, alpha */
     background-color: rgba(230, 230, 230, 0.15);
-    /* red, green, blue, alpha */
     color: rgb(254, 169, 163);
     text-decoration: none;
   }
   
-  /* .carousel_item, */
   .hidden {
     display: none;
   }
   
   .visible {
-    display: block;
+    display: flex;
   }
   
   form input {
-    /* This is a hack to make sure our boxes line up with one another nicely */
     width: 100%;
     width: -moz-available;          /* WebKit-based browsers will ignore this. */
     width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
@@ -214,11 +203,10 @@
     width: fill-available;
     align-items: flex-start;
   
-    display: block; /* this turns the label text into a box we can set margins on */
     margin-bottom: 0.5rem;
   }
   
-  /* How To Write A Media Query For Small Screens */
+  /* Media Query For Small Screens */
   
   @media only screen and (max-width: 736px){
     .container {
@@ -229,8 +217,8 @@
   
     .box {
       width: 100%;
-      width: -moz-available;          /* WebKit-based browsers will ignore this. */
-      width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+      width: -moz-available;          
+      width: -webkit-fill-available;  
       width: fill-available;
       align-items: flex-start;
     }
@@ -243,62 +231,10 @@
       flex: 1 1 auto;
       justify-content: flex-start;
     }
-  }
-  
-  /* Loading Data */
 
-  .lds-ellipsis {
-      display: inline-block;
-      position: relative;
-      width: 80px;
-      height: 80px;
+    #map {
+      width: 100%;
+      height: 380px;
+      margin-bottom: 1rem;
     }
-    .lds-ellipsis div {
-      position: absolute;
-      top: 33px;
-      width: 13px;
-      height: 13px;
-      border-radius: 50%;
-      background: #fff;
-      animation-timing-function: cubic-bezier(0, 1, 1, 0);
-    }
-    .lds-ellipsis div:nth-child(1) {
-      left: 8px;
-      animation: lds-ellipsis1 0.6s infinite;
-    }
-    .lds-ellipsis div:nth-child(2) {
-      left: 8px;
-      animation: lds-ellipsis2 0.6s infinite;
-    }
-    .lds-ellipsis div:nth-child(3) {
-      left: 32px;
-      animation: lds-ellipsis2 0.6s infinite;
-    }
-    .lds-ellipsis div:nth-child(4) {
-      left: 56px;
-      animation: lds-ellipsis3 0.6s infinite;
-    }
-    @keyframes lds-ellipsis1 {
-      0% {
-        transform: scale(0);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-    @keyframes lds-ellipsis3 {
-      0% {
-        transform: scale(1);
-      }
-      100% {
-        transform: scale(0);
-      }
-    }
-    @keyframes lds-ellipsis2 {
-      0% {
-        transform: translate(0, 0);
-      }
-      100% {
-        transform: translate(24px, 0);
-      }
-    }
+  }
