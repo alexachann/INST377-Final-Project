@@ -85,52 +85,20 @@ function getRandomIntInclusive(min, max) {
     const storedList = await results.json();
     const dataList = storedList.features;
 
-    console.log(storedList)
-    console.log(dataList)
-
     localStorage.setItem('storedData', JSON.stringify(dataList));
     let storedData = localStorage.getItem("storedData");
 
-    console.log(storedData)
-
     let parsedData = JSON.parse(storedData);   
-    console.log(parsedData)
 
     if (parsedData?.length > 0) {
       generateListButton.classList.remove("hidden");
     }
   
     loadAnimation.style.display = "none";
-  
-    /*loadDataButton.addEventListener("click", async (submitEvent) => {
-      console.log("loading data");
-      loadAnimation.style.display = "inline-block";
-  
-      const results = await fetch(
-        "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2020-01-01&endtime=2020-01-02"
-      );
-    
-      const storedList = await results.json();
-      const dataList = storedList.Results;
-      console.log(storedList)
-      localStorage.setItem('storedData', JSON.stringify(storedList));
-      parsedData = storedList.features;
-      console.log(parsedData)
-
-      console.log(parsedData.length)
-
-      if (parsedData?.length > 0) {
-        generateListButton.classList.remove("hidden");
-        console.log("test");
-      }
-  
-      loadAnimation.style.display = "none";
-    });*/
 
     refreshDataButton.addEventListener("click", (event) => {
       loadAnimation.style.display = "inline-block";
       localStorage.clear();
-      console.log(localStorage)
 
       const target = document.querySelector("#location");
       target.innerHTML = "";
@@ -167,12 +135,6 @@ function getRandomIntInclusive(min, max) {
         injectHTML(newList);
         markerPlace(newList, carto);
     });
-
-    /*clearDataButton.addEventListener("click", (event) => {
-        console.log('clear browser data');
-        localStorage.clear();
-        console.log('localStorage Check', localStorage.getItem("storedData"));
-    })*/
   }
   
   document.addEventListener("DOMContentLoaded", async () => mainEvent());
