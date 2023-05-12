@@ -22,7 +22,7 @@
     margin: 0;
     padding: 0;
   
-    font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
+    font-family: 'Segoe UI', Candara, 'Bitstream Vera Sans', 'DejaVu Sans', 'Bitsream Vera Sans', 'Trebuchet MS', Verdana, ‘'Verdana Ref', sans-serif;
     font-weight: 400;
     line-height: 1.5;
     background-color: #f9f6f0;
@@ -43,13 +43,6 @@
   form {
     accent-color: hsla(120, 100%, 50%, 0.482);
   }
-  
-  /*
-    - These styles use 'class names'
-    - You can apply them by using the 'class' attribute on your HTML
-    - like this: <div class="wrapper">
-    - note that the period vanishes there!
-  */
   
   .wrapper {
     min-height: 100vh;
@@ -114,15 +107,6 @@
     box-shadow: 0 0.5em 1em -0.125em #0a0a0a1a, 0 0 0 1px #0a0a0a05;
   }
   
-  
-  /*
-    Rules can be combined on a block to apply the 'cascade' in order
-    So you can use two classnames in a single class attribute
-    like: <div class="box section">
-  
-    Rules may combine in unexpected ways - remember that the LAST thing written in this file will have "priority"
-    And will be what displays in your client
-  */
   #map {
     width: 400px;
     height: 380px;
@@ -261,11 +245,8 @@
     }
   }
   
-  /* 
-      New code bonus: pure CSS data loading icon
-      This comes from loading.io/css - it's nice to show that something is happening!
-  */
-  
+  /* Loading Data */
+
   .lds-ellipsis {
       display: inline-block;
       position: relative;
